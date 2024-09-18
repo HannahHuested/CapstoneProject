@@ -23,6 +23,10 @@ export const ResistorValuesGame = () => {
   const [resistorColor3, setResistorColor3] = useState([]);
   const [resistorColor4, setResistorColor4] = useState([]);
   
+  const ColorCode = [[Black, 0], [Brown,1],[Red,2],
+  [Orange,3],[Yellow,4], [Green,5],[Blue,6],[Violet,7],
+  [Gray,8],[White,9]];
+  
   //Initailize available colors and store in local storage (not nessisary)
   useEffect(()=>{
     const initialValues = [[Black, 0], [Brown,1],[Red,2],
@@ -31,8 +35,10 @@ export const ResistorValuesGame = () => {
     localStorage.setItem("resistorValues", JSON.stringify(initialValues))
 
     let array = localStorage.getItem("resistorValues");
-    setColors(JSON.parse(array))
+    setColors(ColorCode);
   }, [])
+
+  
 
   //Get resistors currently saved in localhost and set them to ResistorColors
   useEffect(()=> {
@@ -72,7 +78,7 @@ export const ResistorValuesGame = () => {
       color = {item}
       //Problem area. Resistor colors must communicate which box is being dropped into.
       //TODO:: create array for all bands
-      resistorColors="resistorColor1"
+      resistorColors="resistorColor"
       />
     )}  
     
@@ -80,21 +86,21 @@ export const ResistorValuesGame = () => {
       <tbody>
       <tr>
         <td><div className='rband'>
-          <ResistorBands resistorColors = {resistorColor1}/>
+          <ResistorBands resistorColor = {resistorColor1} resistorId={1}/>
         </div></td>
       <td>
         <div className='rband'>
-          <ResistorBands resistorColors = {resistorColor2}/>
+          <ResistorBands resistorColor= {resistorColor2} resistorId={2}/>
         </div>
       </td>
       <td>
         <div className='rband'>
-          <ResistorBands resistorColors = {resistorColor3}/>
+          <ResistorBands resistorColor = {resistorColor3} resistorId={3}/>
         </div>
       </td>
       <td>
         <div className='rband'>
-          <ResistorBands resistorColors = {resistorColor4}/>
+          <ResistorBands resistorColor = {resistorColor4} resistorId={4}/>
         </div>
       </td>
       </tr>

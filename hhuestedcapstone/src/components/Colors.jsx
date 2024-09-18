@@ -20,17 +20,19 @@ const Colors = ({ color, resistorColors }) => {
         type: "color",
         item:{name: color},
         end: (item, monitor) =>{
+        
         const dropResult = monitor.getDropResult()
+        const resistorId = dropResult.name
         //Problem area. "resistorColors" must be a string 
         //variable which communicates which band the color is being dropped into
         if (item && dropResult) {
             let tempList = item.name;
             //tempList.push(item.name);
           
-            localStorage.setItem(resistorColors, JSON.stringify(tempList));
+            localStorage.setItem(resistorColors + resistorId, JSON.stringify(tempList));
     
            window.location.reload();
-        }
+        } 
     },
         collect: (monitor) => ({
             isDragging: !!monitor.isDragging(),
