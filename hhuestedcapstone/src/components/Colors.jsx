@@ -20,9 +20,10 @@ const Colors = ({ color, resistorColors }) => {
         type: "color",
         item:{name: color},
         end: (item, monitor) =>{
-        
+         //TODO: catch error produced by dropping color outside band.
         const dropResult = monitor.getDropResult()
         const resistorId = dropResult.name
+        
         //Problem area. "resistorColors" must be a string 
         //variable which communicates which band the color is being dropped into
         if (item && dropResult) {

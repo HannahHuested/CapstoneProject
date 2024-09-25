@@ -22,11 +22,9 @@ const ResistorBands = ({resistorColor, resistorId}) => {
 
   return (
 
-    <div className= 'border h-200' ref={drop}>
-        <h2 className="text-center font-mediu, py-2"></h2>
-            <p><img className="band" src={resistorColor[0]}/>resistorColor[1]</p>
-           
-        </div>
+    <div ref={drop}>
+            <p><img className="band" src={resistorColor[0]}/></p>      
+    </div>
   )
 }
 

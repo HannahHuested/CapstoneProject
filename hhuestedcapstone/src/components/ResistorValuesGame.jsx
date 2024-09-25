@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/Button';
 import Colors from './Colors'
 import ResistorBands from './ResistorBands';
 import Black from '../images/Black.png';
@@ -13,7 +14,7 @@ import Gray from '../images/Gray.png';
 import White from '../images/White.png';
 
 export const ResistorValuesGame = () => {
-
+  
   //List of available colors
   const [colors, setColors] = useState([]);
   //Used to hold colors currently inside resistor bands
@@ -29,15 +30,15 @@ export const ResistorValuesGame = () => {
   
   //Initailize available colors and store in local storage (not nessisary)
   useEffect(()=>{
-    const initialValues = [[Black, 0], [Brown,1],[Red,2],
+    /*const initialValues = [[Black, 0], [Brown,1],[Red,2],
     [Orange,3],[Yellow,4], [Green,5],[Blue,6],[Violet,7],
     [Gray,8],[White,9]];
-    localStorage.setItem("resistorValues", JSON.stringify(initialValues))
+    localStorage.setItem("resistorValues", JSON.stringify(initialValues))*/
 
-    let array = localStorage.getItem("resistorValues");
+    //let array = localStorage.getItem("resistorValues");
     setColors(ColorCode);
   }, [])
-
+ 
   
 
   //Get resistors currently saved in localhost and set them to ResistorColors
@@ -69,9 +70,24 @@ export const ResistorValuesGame = () => {
       setResistorColor4(JSON.parse(array));
     }
   }, [])
+  
+  function ClearColors() {
+    return(
+      localStorage.setItem('resistorColor1', JSON.stringify(ColorCode[0])),
+      localStorage.setItem('resistorColor2', JSON.stringify(ColorCode[0])),
+      localStorage.setItem('resistorColor3', JSON.stringify(ColorCode[0])),
+      localStorage.setItem('resistorColor4', JSON.stringify(ColorCode[0])),
+
+      setResistorColor1(JSON.parse(localStorage.getItem('resistorColor1'))),
+      setResistorColor2(JSON.parse(localStorage.getItem('resistorColor2'))),
+      setResistorColor3(JSON.parse(localStorage.getItem('resistorColor3'))),
+      setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4'))),
+      window.location.reload());
+    
+  } //end ClearColors
 
   return (
-    <div ><h3>Resistor Values Game</h3>
+    <div className='RGame' ><h3>Resistor Values Game</h3>
     {colors.map(item => 
       <Colors
       key= {new Date().getTime() + Math.floor(Math.random()*1000)}
@@ -81,7 +97,7 @@ export const ResistorValuesGame = () => {
       resistorColors="resistorColor"
       />
     )}  
-    
+    <p></p>
     <table>
       <tbody>
       <tr>
@@ -105,7 +121,12 @@ export const ResistorValuesGame = () => {
       </td>
       </tr>
       </tbody>
-    </table>
+      </table>
+    <div classname="gameButtons">
+    <p>{resistorColor1[1]}{resistorColor2[1]}{resistorColor3[1]} x10<sup>{resistorColor4[1]}</sup></p>
+        <Button variant="primary">Submit</Button>{' '}
+        <Button variant='secondary' onClick={ClearColors}>Clear</Button>{''}
+    </div>
 
     </div>
   )
