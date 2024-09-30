@@ -9,6 +9,7 @@ import {
   Routes,
   Route,
   Link} from 'react-router-dom';
+import SignIn from '../firebase/signIn';
 import { Home } from './Home';
 import { About } from './About';
 import { Levels } from './Levels';
@@ -30,9 +31,9 @@ class MyNav extends React.Component {
                         <Nav.Link as={Link} to='/about'>About</Nav.Link>
                         <Nav.Link as={Link} to='/stats'>User Statistics</Nav.Link>
                     </Nav>
-                  </Navbar.Collapse>
-                  
+                  </Navbar.Collapse> 
               </Container>
+              {SignIn()}
           </Navbar>
         </div>
         <div className='pageBody'>

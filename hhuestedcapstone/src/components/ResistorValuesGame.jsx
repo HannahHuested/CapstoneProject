@@ -81,8 +81,9 @@ export const ResistorValuesGame = () => {
       setResistorColor1(JSON.parse(localStorage.getItem('resistorColor1'))),
       setResistorColor2(JSON.parse(localStorage.getItem('resistorColor2'))),
       setResistorColor3(JSON.parse(localStorage.getItem('resistorColor3'))),
-      setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4'))),
-      window.location.reload());
+      setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4')))
+      //window.location.reload()
+    );
     
   } //end ClearColors
 
