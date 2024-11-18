@@ -93,13 +93,12 @@ export const ResistorValuesGame = () => {
       <Colors
       key= {new Date().getTime() + Math.floor(Math.random()*1000)}
       color = {item}
-      //Problem area. Resistor colors must communicate which box is being dropped into.
-      //TODO:: create array for all bands
+
       resistorColors="resistorColor"
       />
     )}  
     <p></p>
-    <table>
+    <table className='resistor'>
       <tbody>
       <tr>
         <td><div className='rband'>
@@ -123,7 +122,7 @@ export const ResistorValuesGame = () => {
       </tr>
       </tbody>
       </table>
-    <div classname="gameButtons">
+    <div className="gameButtons">
     <p>{resistorColor1[1]}{resistorColor2[1]}{resistorColor3[1]} x10<sup>{resistorColor4[1]}</sup></p>
         <Button variant="primary">Submit</Button>{' '}
         <Button variant='secondary' onClick={ClearColors}>Clear</Button>{''}

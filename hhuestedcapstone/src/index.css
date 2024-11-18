@@ -17,11 +17,9 @@ table{
   margin-left: auto;
   margin-right: auto;
   width: 500px;
-  background-color: antiquewhite;
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   padding-left: 1%; 
@@ -29,11 +27,16 @@ footer {
 }
 
 .pageBody {
-  border-radius: 25px;
   background-color: rgb(68, 68, 68);
-  height: 600px;
+  size: 100%
 }
 
+.resistor{
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  background-color: antiquewhite;
+}
 .band{
   object-fit: cover;
   width: 100px;
@@ -55,7 +58,8 @@ footer {
 }
 
 .RGame {
-  vertical-align: middle;
+  float: block;
+  display: block;
 }
 .gameButtons {
   display: inline-block;
@@ -66,6 +70,20 @@ footer {
   height: 150px;
   width: 60px;
   overflow: hidden;
+}
+
+.Cards{
+  display: inline-block;
+  padding:5%;
+  
+}
+.cards
+{
+  display:inline;
+  color: white;
+  margin:auto;
+  height:150px;
+  width: 18rem;
 }
 
 
