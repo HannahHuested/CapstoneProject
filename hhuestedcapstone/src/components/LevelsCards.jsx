@@ -7,7 +7,9 @@ export const LevelsCards = () => {
 
 return(
     <div className="Cards">
-    <table><tr>
+    <table>
+        <tbody>
+        <tr>
         <td>
         <Card className = 'cards' bg='dark' text = 'white' border="black">
         <Card.Body>
@@ -55,6 +57,7 @@ return(
     </Card>
         </td>
     </tr>
+    </tbody>
     </table>
 
     

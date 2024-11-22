@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Modals from './modals';
 import Button from 'react-bootstrap/Button';
 import Colors from './Colors'
 import ResistorBands from './ResistorBands';
@@ -15,6 +16,7 @@ import White from '../images/White.png';
 
 export const ResistorValuesGame = () => {
   
+  var goal = 3000;
   //List of available colors
   const [colors, setColors] = useState([]);
   //Used to hold colors currently inside resistor bands
@@ -84,7 +86,6 @@ export const ResistorValuesGame = () => {
       setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4')))
       //window.location.reload()
     );
-    
   } //end ClearColors
 
   return (
@@ -123,8 +124,8 @@ export const ResistorValuesGame = () => {
       </tbody>
       </table>
     <div className="gameButtons">
-    <p>{resistorColor1[1]}{resistorColor2[1]}{resistorColor3[1]} x10<sup>{resistorColor4[1]}</sup></p>
-        <Button variant="primary">Submit</Button>{' '}
+    <p>{resistorColor1[1]}{resistorColor2[1]}{resistorColor3[1]} x10<sup>{resistorColor4[1]}</sup>Ω</p>
+        {Modals()}
         <Button variant='secondary' onClick={ClearColors}>Clear</Button>{''}
     </div>
 

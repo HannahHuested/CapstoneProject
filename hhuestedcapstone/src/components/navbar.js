@@ -32,13 +32,13 @@ class MyNav extends React.Component {
                         <Nav.Link as={Link} to='/stats'>User Statistics</Nav.Link>
                     </Nav>
                   </Navbar.Collapse> 
+                  {SignIn()}
               </Container>
-              {SignIn()}
           </Navbar>
         </div>
         <div className='pageBody'>
           <Routes>
-            <Route path='/home' element={<Home/>}/>
+            <Route path='/home/*' element={<Home/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/levels' element={<Levels/>}/>
             <Route path='/equations' element={<Equations/>}/>

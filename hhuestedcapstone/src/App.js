@@ -10,7 +10,6 @@ function App() {
     <DndProvider backend={HTML5Backend}>
     <div className="App">
       <header><MyNav/></header>
-      
     </div>
     
     </DndProvider>
