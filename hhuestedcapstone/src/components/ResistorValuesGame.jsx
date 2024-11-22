@@ -88,8 +88,18 @@ export const ResistorValuesGame = () => {
     );
   } //end ClearColors
 
+  function checkAnswer()
+  {
+    var success = false;
+    var answer = ((resistorColor1[1]*100) + (resistorColor2[1]*10) + (resistorColor3[1])) * (10**resistorColor4[1]);
+    if(answer==goal) {success = true};
+
+    return(success)
+  }
   return (
-    <div className='RGame' ><h3>Resistor Values Game</h3>
+    <div className='RGame' ><h3>Drag colors into the resistor bands to represent the value {goal}Ω</h3>
+    <div className='draggableColors'>
+    <br></br>
     {colors.map(item => 
       <Colors
       key= {new Date().getTime() + Math.floor(Math.random()*1000)}
@@ -97,8 +107,8 @@ export const ResistorValuesGame = () => {
 
       resistorColors="resistorColor"
       />
-    )}  
-    <p></p>
+    )}  </div>
+    <br></br>
     <table className='resistor'>
       <tbody>
       <tr>
@@ -125,7 +135,7 @@ export const ResistorValuesGame = () => {
       </table>
     <div className="gameButtons">
     <p>{resistorColor1[1]}{resistorColor2[1]}{resistorColor3[1]} x10<sup>{resistorColor4[1]}</sup>Ω</p>
-        {Modals()}
+        {Modals(checkAnswer())}
         <Button variant='secondary' onClick={ClearColors}>Clear</Button>{''}
     </div>
 

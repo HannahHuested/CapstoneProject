@@ -2,12 +2,16 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-const Modals = () => {
-  const [show, setShow] = useState(false);
-  
+const Modals = (success) => {
+    const successHeader = "Success";
+    const successBody= "Woohoo, You did great!";
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+    const failureHeader = "Fail";
+    const failureBody = "Try again!";
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false); 
+    const handleShow = () => setShow(true);
 
   return (
     <>
@@ -17,9 +21,9 @@ const Modals = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Success!</Modal.Title>
+          <Modal.Title>{success ? successHeader:failureHeader}!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, You did great!</Modal.Body>
+        <Modal.Body>{success ? successBody:failureBody}</Modal.Body>
         <Modal.Footer>
           <Button variant="primary" onClick={handleClose}>
             Continue

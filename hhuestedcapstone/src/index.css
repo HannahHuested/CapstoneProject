@@ -43,11 +43,20 @@ footer {
   size: 100%
 }
 
+.offcanvas
+{
+  width: 95% !important;
+  justify-content: center !important;
+  align-content: center;
+}
+
 .resistor{
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 530px;
   background-color: antiquewhite;
+  justify-content: center;
+  border-radius: 30px;
 }
 .band{
   object-fit: cover;
@@ -73,9 +82,22 @@ footer {
   float: block;
   display: block;
 }
+
+.draggableColors {
+  margin-left: auto;
+  margin-right: auto;
+  float: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 500px;
+}
+
 .gameButtons {
   display: inline-block;
+  margin: auto;
 }
+
 .rband {
   margin-left: auto;
   margin-right: auto;
@@ -87,8 +109,8 @@ footer {
 .Cards{
   display: inline-block;
   padding:5%;
-  
 }
+
 .cards
 {
   display:inline;

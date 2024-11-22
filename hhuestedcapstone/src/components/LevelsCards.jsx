@@ -1,7 +1,7 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import CardGroup from 'react-bootstrap/CardGroup';
+import Level from "./Level";
 
 export const LevelsCards = () => {
 
@@ -17,7 +17,7 @@ return(
             <Card.Text>
                 Circuit basics
             </Card.Text>
-            <Button variant="primary">Start</Button>
+            {Level()}
         </Card.Body>
     </Card>
         </td>
@@ -28,7 +28,7 @@ return(
             <Card.Text>
                 Introduction to resistors
             </Card.Text>
-            <Button variant="primary">Start</Button>
+            {Level()}
         </Card.Body>
     </Card>
         </td>
@@ -41,7 +41,7 @@ return(
             <Card.Text>
                 The resistor color code
             </Card.Text>
-            <Button variant="primary">Start</Button>
+            {Level()}
         </Card.Body>
     </Card>
         </td>
@@ -52,7 +52,7 @@ return(
             <Card.Text>
                 Engineering Notation
             </Card.Text>
-            <Button variant="primary">Start</Button>
+            {Level()}
         </Card.Body>
     </Card>
         </td>
