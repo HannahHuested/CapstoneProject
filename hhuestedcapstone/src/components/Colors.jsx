@@ -16,7 +16,7 @@ Gray: 8
 White: 9
 */
 
-const Colors = ({ color, resistorColors}) => { 
+const Colors = ({ color, resistorColors,r1,r2,r3,r4}) => { 
     const [{isDragging}, drag] = useDrag(() => ({
         type: "color",
         item:{name: color},
@@ -29,9 +29,18 @@ const Colors = ({ color, resistorColors}) => {
             let tempList = item.name;
 
             localStorage.setItem(resistorColors + resistorId, JSON.stringify(tempList));
-          //TODO: find a way to display the current color w/out reloading (possible, on drop update useState instead of local storage)
-          //use if else to check which band, set resistor color as indicated
-          window.location.reload();
+            if(resistorId==1){
+              r1(JSON.parse(localStorage.getItem('resistorColor1')));
+            }
+            else if(resistorId==2) {
+              r2(JSON.parse(localStorage.getItem('resistorColor2')));
+            }
+            else if(resistorId==3) {
+              r3(JSON.parse(localStorage.getItem('resistorColor3')));
+            }
+            else{
+              r4(JSON.parse(localStorage.getItem('resistorColor4')));
+            }
         } 
     },
         collect: (monitor) => ({

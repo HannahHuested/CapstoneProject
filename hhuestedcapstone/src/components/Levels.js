@@ -5,7 +5,7 @@ import { LevelsCards } from './LevelsCards';
 export const Levels = () => {
 
   return (
-    <div><h3>Levels</h3>
+    <div>
     <LevelsCards/>
     <ResistorValuesGame/>
     </div>

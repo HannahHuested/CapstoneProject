@@ -17,7 +17,7 @@ return(
             <Card.Text>
                 Circuit basics
             </Card.Text>
-            {Level()}
+            {Level(0)}
         </Card.Body>
     </Card>
         </td>
@@ -28,7 +28,7 @@ return(
             <Card.Text>
                 Introduction to resistors
             </Card.Text>
-            {Level()}
+            {Level(1)}
         </Card.Body>
     </Card>
         </td>
@@ -41,7 +41,7 @@ return(
             <Card.Text>
                 The resistor color code
             </Card.Text>
-            {Level()}
+            {Level(2)}
         </Card.Body>
     </Card>
         </td>
@@ -52,7 +52,7 @@ return(
             <Card.Text>
                 Engineering Notation
             </Card.Text>
-            {Level()}
+            {Level(3)}
         </Card.Body>
     </Card>
         </td>

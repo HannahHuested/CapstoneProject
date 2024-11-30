@@ -1,7 +1,6 @@
 body {
   margin:auto;
-  min-height: 700px ;
-  size:100%;
+  min-height:fit-content;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -81,6 +80,8 @@ footer {
 .RGame {
   float: block;
   display: block;
+  justify-content: center;
+  margin: 3%;
 }
 
 .draggableColors {
@@ -96,6 +97,7 @@ footer {
 .gameButtons {
   display: inline-block;
   margin: auto;
+  justify-content: center !important;
 }
 
 .rband {
@@ -115,7 +117,7 @@ footer {
 {
   display:inline;
   color: white;
-  margin:auto;
+  margin:2%;
   height:150px;
   width: 18rem;
 }

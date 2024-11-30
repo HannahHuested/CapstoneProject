@@ -19,7 +19,8 @@ const Modals = (success) => {
         Submit
       </Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} aria-labelledby="contained-modal-title-vcenter"
+      centered>
         <Modal.Header closeButton>
           <Modal.Title>{success ? successHeader:failureHeader}!</Modal.Title>
         </Modal.Header>

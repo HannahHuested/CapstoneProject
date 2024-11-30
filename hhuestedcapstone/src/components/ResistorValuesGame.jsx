@@ -106,6 +106,10 @@ export const ResistorValuesGame = () => {
       color = {item}
 
       resistorColors="resistorColor"
+      r1 = {setResistorColor1}
+      r2 = {setResistorColor2}
+      r3 = {setResistorColor3}
+      r4 = {setResistorColor4}
       />
     )}  </div>
     <br></br>
@@ -136,7 +140,7 @@ export const ResistorValuesGame = () => {
     <div className="gameButtons">
     <p>{resistorColor1[1]}{resistorColor2[1]}{resistorColor3[1]} x10<sup>{resistorColor4[1]}</sup>Ω</p>
         {Modals(checkAnswer())}
-        <Button variant='secondary' onClick={ClearColors}>Clear</Button>{''}
+        <Button variant='secondary' onClick={ClearColors}>Clear</Button>
     </div>
 
     </div>
