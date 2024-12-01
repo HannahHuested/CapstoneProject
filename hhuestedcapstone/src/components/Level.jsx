@@ -58,8 +58,8 @@ const Level = (lessonNum) => {
         <Offcanvas.Body>
           {lessonData.map((lesson) => (
             <div key ={lesson.id}>
-                <p>{lesson.LessonText}</p>
-            </div>
+                {lesson.LessonText}
+                </div>
           ))}
           <ResistorValuesGame/>
         </Offcanvas.Body>

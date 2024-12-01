@@ -47,6 +47,7 @@ footer {
   width: 95% !important;
   justify-content: center !important;
   align-content: center;
+  white-space: pre-line;
 }
 
 .resistor{
