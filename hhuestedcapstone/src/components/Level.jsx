@@ -5,14 +5,8 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import { collection, getDocs,query, where } from 'firebase/firestore';
 import {db} from '../firebase/utils';
 
+
 async function fetchLesson(lessonNum){
-    /*const querySnapshot = await getDocs(collection(db,"Lessons"));
-
-    const data =[];
-    querySnapshot.forEach((doc) => {
-        data.push({id:doc.id, ...doc.data()});
-    });*/
-
     const lessonCollection = collection(db,'Lessons');
     const q = query(lessonCollection, where('LessonNum','==', lessonNum));
     const querySnapshot = await getDocs(q);
@@ -20,22 +14,18 @@ async function fetchLesson(lessonNum){
         id:doc.id,
         ...doc.data()
     }));
-
-
     return data;
 }
 
 const Level = (lessonNum) => {
-    
-    const [lessonData, setLessonData] = useState([]);
-
+    const [lessonData, setLessonData] = useState([]);  
     useEffect(()=> { async function fetchData(){
         const data = await fetchLesson(lessonNum);
         setLessonData(data);
     }
-
     fetchData();
 }, []);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -48,21 +38,22 @@ const Level = (lessonNum) => {
       </Button>
 
       <Offcanvas className="offcanvas" show={show} onHide={handleClose} placement='end' backdrop={false}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title> <b>{lessonData.map((lesson) => (
+        <Offcanvas.Header className='offcannvas-header' closeButton>
+          <Offcanvas.Title className='offcanvas-title'> <b>{lessonData.map((lesson) => (
             <div key ={lesson.id}>
                 {lesson.LessonTitle}
             </div>
           ))}</b></Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className='offcanvas-body'>
           {lessonData.map((lesson) => (
             <div key ={lesson.id}>
-                {lesson.LessonText}
-                </div>
+              <p className='lessonText' dangerouslySetInnerHTML={{__html:lesson.LessonText}}></p>
+            </div>
           ))}
-          <ResistorValuesGame/>
+
         </Offcanvas.Body>
+
       </Offcanvas>
     </>
   );

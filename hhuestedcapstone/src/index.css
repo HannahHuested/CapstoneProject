@@ -1,6 +1,8 @@
 body {
-  margin:auto;
-  min-height:fit-content;
+  
+  background-color: rgb(68, 68, 68);
+  height: auto;
+  min-height:1000px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -39,6 +41,7 @@ footer {
 
 .pageBody {
   background-color: rgb(68, 68, 68);
+  color: white;
   size: 100%
 }
 
@@ -48,6 +51,22 @@ footer {
   justify-content: center !important;
   align-content: center;
   white-space: pre-line;
+  background-color: rgb(68, 68, 68) !important;
+}
+
+.offcanvas-header {
+  background-color: rgb(38, 38, 38);
+}
+
+.offcanvas-title {
+  color: white !important;
+}
+
+.offcanvas-body {
+  white-space: pre-line;
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .resistor{
@@ -121,6 +140,13 @@ footer {
   margin:2%;
   height:150px;
   width: 18rem;
+}
+
+.lessonText {
+  display:inline-block;
+  float: none;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 

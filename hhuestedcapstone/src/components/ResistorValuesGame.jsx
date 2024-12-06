@@ -42,36 +42,17 @@ export const ResistorValuesGame = () => {
   }, [])
  
   
+useEffect(()=>{
+  localStorage.setItem('resistorColor1', JSON.stringify(ColorCode[0]));
+  localStorage.setItem('resistorColor2', JSON.stringify(ColorCode[0]));
+  localStorage.setItem('resistorColor3', JSON.stringify(ColorCode[0]));
+  localStorage.setItem('resistorColor4', JSON.stringify(ColorCode[0]));
 
-  //Get resistors currently saved in localhost and set them to ResistorColors
-  useEffect(()=> {
-    let array = localStorage.getItem('resistorColor1');
-    if(array)
-    {
-      setResistorColor1(JSON.parse(array));
-    }
-  }, [])
-  useEffect(()=> {
-    let array = localStorage.getItem('resistorColor2');
-    if(array)
-    {
-      setResistorColor2(JSON.parse(array));
-    }
-  }, [])
-  useEffect(()=> {
-    let array = localStorage.getItem('resistorColor3');
-    if(array)
-    {
-      setResistorColor3(JSON.parse(array));
-    }
-  }, [])
-  useEffect(()=> {
-    let array = localStorage.getItem('resistorColor4');
-    if(array)
-    {
-      setResistorColor4(JSON.parse(array));
-    }
-  }, [])
+  setResistorColor1(JSON.parse(localStorage.getItem('resistorColor1')));
+  setResistorColor2(JSON.parse(localStorage.getItem('resistorColor2')));
+  setResistorColor3(JSON.parse(localStorage.getItem('resistorColor3')));
+  setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4')));
+},[])
   
   function ClearColors() {
     return(

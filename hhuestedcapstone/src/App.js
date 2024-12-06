@@ -6,14 +6,13 @@ import {HTML5Backend} from 'react-dnd-html5-backend'
 function App() {
   
   return (
-    <body className='pageBody'>
+    <div>
     <DndProvider backend={HTML5Backend}>
     <div className="App">
       <header><MyNav/></header>
     </div>
-    
     </DndProvider>
-    </body>
+    </div>
   );
 }
 
