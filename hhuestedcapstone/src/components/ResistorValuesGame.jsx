@@ -32,12 +32,6 @@ export const ResistorValuesGame = () => {
   
   //Initailize available colors and store in local storage (not nessisary)
   useEffect(()=>{
-    /*const initialValues = [[Black, 0], [Brown,1],[Red,2],
-    [Orange,3],[Yellow,4], [Green,5],[Blue,6],[Violet,7],
-    [Gray,8],[White,9]];
-    localStorage.setItem("resistorValues", JSON.stringify(initialValues))*/
-
-    //let array = localStorage.getItem("resistorValues");
     setColors(ColorCode);
   }, [])
  
@@ -65,9 +59,8 @@ useEffect(()=>{
       setResistorColor2(JSON.parse(localStorage.getItem('resistorColor2'))),
       setResistorColor3(JSON.parse(localStorage.getItem('resistorColor3'))),
       setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4')))
-      //window.location.reload()
     );
-  } //end ClearColors
+  }
 
   function checkAnswer()
   {

@@ -18,18 +18,27 @@ async function fetchLesson(lessonNum){
 }
 
 const Level = (lessonNum) => {
-    const [lessonData, setLessonData] = useState([]);  
-    useEffect(()=> { async function fetchData(){
-        const data = await fetchLesson(lessonNum);
-        setLessonData(data);
-    }
+    const [lessonData, setLessonData] = useState([]); 
+
+    async function fetchData(){
+      const data = await fetchLesson(lessonNum);
+      setLessonData(data);
+  } 
+
+    useEffect(()=> { 
     fetchData();
 }, []);
+
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  function nextLesson() {
+    lessonNum = lessonNum+1;
+    fetchData();
+  }
 
   return (
     <>
@@ -51,7 +60,7 @@ const Level = (lessonNum) => {
               <p className='lessonText' dangerouslySetInnerHTML={{__html:lesson.LessonText}}></p>
             </div>
           ))}
-
+        <Button variant='primary' onClick={handleClose}>Finish Lesson</Button>
         </Offcanvas.Body>
 
       </Offcanvas>
