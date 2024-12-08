@@ -51,7 +51,7 @@ const Level = (lessonNum) => {
               <p className='lessonText' dangerouslySetInnerHTML={{__html:lesson.LessonText}}></p>
             </div>
           ))}
-
+        <Button variant='primary' onClick={handleClose}>Finish Lesson</Button>
         </Offcanvas.Body>
 
       </Offcanvas>
