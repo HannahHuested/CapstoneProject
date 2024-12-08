@@ -14,9 +14,9 @@ import Violet from '../images/Violet.png';
 import Gray from '../images/Gray.png';
 import White from '../images/White.png';
 
-export const ResistorValuesGame = () => {
+export const ResistorValuesGame = (goal) => {
   
-  var goal = 3000;
+  //var goal = 3000;
   //List of available colors
   const [colors, setColors] = useState([]);
   //Used to hold colors currently inside resistor bands
@@ -78,7 +78,7 @@ useEffect(()=>{
     return(success)
   }
   return (
-    <div className='RGame' ><h3>Drag colors into the resistor bands to represent the value {goal}Ω</h3>
+    <div className='RGame' >
     <div className='draggableColors'>
     <br></br>
     {colors.map(item => 
