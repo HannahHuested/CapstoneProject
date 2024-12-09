@@ -20,6 +20,7 @@ export const GameContainer = () => {
         num = num.toString();
         return (num);
     }
+    
     async function getVal(num){
 
         const docRef = doc(db, "Target", num);

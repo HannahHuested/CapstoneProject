@@ -10,7 +10,7 @@ const SignIn = () => {
 
     return(
         <div>
-            <Button varient = 'primary' onClick={logGoogleUser}>SignIn</Button>
+            <Button varient = 'primary' onClick={logGoogleUser}>Sign In</Button>
         </div>
         
     )
