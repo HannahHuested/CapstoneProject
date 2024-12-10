@@ -9,11 +9,10 @@ The weights of the bands are
 4th: Multiplier (*10^(colorValue))
 */
 
-const ResistorBands = ({resistorColors}) => {
+const ResistorBands = ({resistorColor, resistorId}) => {
     const [{canDrop, isOver}, drop] = useDrop(()=>({
         accept: "color",
-
-        drop: () => ({name: "resistorBands"}),
+        drop: () => ({name: resistorId}),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),
             canDrop: !!monitor.canDrop()
@@ -23,11 +22,9 @@ const ResistorBands = ({resistorColors}) => {
 
   return (
 
-    <div className= 'border h-200' ref={drop}>
-        <h2 className="text-center font-mediu, py-2"></h2>
-            <p><img className="band" src={resistorColors[0]}/></p>
-           
-        </div>
+    <div ref={drop}>
+            <p><img className="band" src={resistorColor[0]}/></p>      
+    </div>
   )
 }
 
