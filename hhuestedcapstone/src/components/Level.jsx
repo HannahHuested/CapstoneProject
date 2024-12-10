@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import ResistorValuesGame from './ResistorValuesGame'
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { doc, getDoc } from 'firebase/firestore';
 import {db} from '../firebase/utils';
@@ -16,7 +19,7 @@ const Level = (lessonNum) => {
   const [previousLesson, setPreviousLesson] = useState(-1);
   const [firstLesson, setFirstLesson] = useState(true);
   const [lastLesson,setLastLesson] = useState(false);
-  const lessonQuantity = 3;
+  const lessonQuantity = 5;
 
   async function fetchLesson(lessonNum){
       const docRef = doc(db, "Lessons", lessonNum.toString());
@@ -82,9 +85,19 @@ const Level = (lessonNum) => {
         </Offcanvas.Header>
         <Offcanvas.Body className='offcanvas-body'>
               <p className='lessonText' dangerouslySetInnerHTML={{__html:lessonData.LessonText}}></p>
-              <Button variant='primary' onClick={goBack} hidden={firstLesson}><b>←</b></Button>
-              <Button variant='secondary' onClick={handleClose}>Finish Lesson</Button>
-              <Button variant='primary' onClick={advance} hidden={lastLesson}><b>→</b></Button>
+              <Container className='lessonButtons'>
+                <Row>
+                  <Col>
+                    <Button variant='primary' onClick={goBack} hidden={firstLesson}><b>🠄</b></Button>
+                  </Col>
+                  <Col>
+                    <Button variant='secondary' onClick={handleClose}>Finish Lesson</Button>
+                  </Col>
+                  <Col>
+                   <Button variant='primary' onClick={advance} hidden={lastLesson}><b>🠆</b></Button>
+                  </Col>
+                </Row>
+              </Container>
         </Offcanvas.Body>
 
       </Offcanvas>

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Modals from './modals';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 import Colors from './Colors'
 import ResistorBands from './ResistorBands';
 import Black from '../images/Black.png';
@@ -97,6 +100,7 @@ useEffect(()=>{
       />
     )}  </div>
     <br></br>
+
     <table className='resistor'>
       <tbody>
       <tr>
