@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Modals from './modals';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 import Colors from './Colors'
 import ResistorBands from './ResistorBands';
 import Black from '../images/Black.png';
@@ -14,9 +17,9 @@ import Violet from '../images/Violet.png';
 import Gray from '../images/Gray.png';
 import White from '../images/White.png';
 
-export const ResistorValuesGame = () => {
+export const ResistorValuesGame = (goal) => {
   
-  var goal = 3000;
+  //var goal = 3000;
   //List of available colors
   const [colors, setColors] = useState([]);
   //Used to hold colors currently inside resistor bands
@@ -32,6 +35,12 @@ export const ResistorValuesGame = () => {
   
   //Initailize available colors and store in local storage (not nessisary)
   useEffect(()=>{
+    /*const initialValues = [[Black, 0], [Brown,1],[Red,2],
+    [Orange,3],[Yellow,4], [Green,5],[Blue,6],[Violet,7],
+    [Gray,8],[White,9]];
+    localStorage.setItem("resistorValues", JSON.stringify(initialValues))*/
+
+    //let array = localStorage.getItem("resistorValues");
     setColors(ColorCode);
   }, [])
  
@@ -59,19 +68,23 @@ useEffect(()=>{
       setResistorColor2(JSON.parse(localStorage.getItem('resistorColor2'))),
       setResistorColor3(JSON.parse(localStorage.getItem('resistorColor3'))),
       setResistorColor4(JSON.parse(localStorage.getItem('resistorColor4')))
+      //window.location.reload()
     );
-  }
+  } //end ClearColors
 
   function checkAnswer()
   {
     var success = false;
-    var answer = ((resistorColor1[1]*100) + (resistorColor2[1]*10) + (resistorColor3[1])) * (10**resistorColor4[1]);
+    var answer = ((resistorColor1[1]*100) 
+    + (resistorColor2[1]*10) 
+    + (resistorColor3[1])) 
+    * (10**resistorColor4[1]);
     if(answer==goal) {success = true};
 
     return(success)
   }
   return (
-    <div className='RGame' ><h3>Drag colors into the resistor bands to represent the value {goal}Ω</h3>
+    <div className='RGame' >
     <div className='draggableColors'>
     <br></br>
     {colors.map(item => 
@@ -87,6 +100,7 @@ useEffect(()=>{
       />
     )}  </div>
     <br></br>
+
     <table className='resistor'>
       <tbody>
       <tr>

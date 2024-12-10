@@ -1,5 +1,6 @@
 
 import ResistorValuesGame from './ResistorValuesGame';
+import GameContainer from './GameContainer';
 import { LevelsCards } from './LevelsCards';
 
 export const Levels = () => {
@@ -7,7 +8,7 @@ export const Levels = () => {
   return (
     <div>
     <LevelsCards/>
-    <ResistorValuesGame/>
+    <GameContainer/>
     </div>
   )
 }
