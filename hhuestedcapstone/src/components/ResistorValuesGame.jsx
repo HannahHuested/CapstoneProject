@@ -72,7 +72,10 @@ useEffect(()=>{
   function checkAnswer()
   {
     var success = false;
-    var answer = ((resistorColor1[1]*100) + (resistorColor2[1]*10) + (resistorColor3[1])) * (10**resistorColor4[1]);
+    var answer = ((resistorColor1[1]*100) 
+    + (resistorColor2[1]*10) 
+    + (resistorColor3[1])) 
+    * (10**resistorColor4[1]);
     if(answer==goal) {success = true};
 
     return(success)
