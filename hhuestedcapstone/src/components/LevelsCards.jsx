@@ -1,5 +1,4 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Level from "./Level";
 import Container from 'react-bootstrap/Container';
@@ -13,7 +12,7 @@ return(
         <Container fluid='true'>
             <Row>
                 <Col>
-                    <Card className = 'cards' bg='dark' text = 'white' border="black">
+                    <Card className = 'cards' bg='dark' text = 'white'>
                         <Card.Body>
                             <Card.Title>Introduction</Card.Title>
                             <Card.Text>
@@ -24,7 +23,7 @@ return(
                     </Card>
                 </Col>
                 <Col>
-                    <Card className = 'cards' bg='dark' text = 'white' border ="secondary">
+                    <Card className = 'cards' bg='dark' text = 'white'>
                         <Card.Body>
                             <Card.Title>Level 1</Card.Title>
                             <Card.Text>
@@ -37,7 +36,7 @@ return(
             </Row>
             <Row>
                 <Col>
-                    <Card className = 'cards' bg='dark' text = 'white' border="danger">
+                    <Card className = 'cards' bg='dark' text = 'white'>
                         <Card.Body>
                             <Card.Title>Level 2</Card.Title>
                             <Card.Text>
@@ -48,13 +47,37 @@ return(
                     </Card>
                 </Col>
                 <Col>
-                    <Card className = 'cards' bg='dark' text = 'white' border="warning">
+                    <Card className = 'cards orangeCard' bg='dark' text = 'white'>
                         <Card.Body>
                             <Card.Title>Level 3</Card.Title>
                             <Card.Text>
                                 Engineering Notation
                             </Card.Text>
                             {Level(3)}
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <Card className = 'cards orangeCard' bg='dark' text = 'white'>
+                        <Card.Body>
+                            <Card.Title>Level 4</Card.Title>
+                            <Card.Text>
+                                Current
+                            </Card.Text>
+                            {Level(4)}
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col>
+                    <Card className = 'cards orangeCard' bg='dark' text = 'white'>
+                        <Card.Body>
+                            <Card.Title>Level 5</Card.Title>
+                            <Card.Text>
+                                Voltage
+                            </Card.Text>
+                            {Level(5)}
                         </Card.Body>
                     </Card>
                 </Col>
